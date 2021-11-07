@@ -1,12 +1,12 @@
 const express = require('express');
-const UserModel = require('../models/User')
+const AdminModel = require('../models/Admin')
 
 const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    UserModel.all((err, result) => {
+    AdminModel.getAdminInformation((err, result) => {
         if (err) {
             next(err)
         } else {
