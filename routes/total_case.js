@@ -1,12 +1,12 @@
 const express = require('express');
-const VaccinedModel = require('../models/Vaccined')
+const Total_caseModel = require('../models/Total_case')
 
 const router = express.Router();
 
-/* GET Province's vaccined listing. */
+/* GET Province Information listing. */
 router.get('/', function(req, res, next) {
 
-    VaccinedModel.provVaccined((err, result) => {
+    Total_caseModel.Total_Case((err, result) => {
         if (err) {
             next(err)
         } else {

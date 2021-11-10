@@ -1,12 +1,12 @@
 const express = require('express');
-const CovidModel = require('../models/Covid-19_Laos')
+const Active_caseModel = require('../models/Active_case')
 
 const router = express.Router();
 
-/* GET Covid-19 Information in Laos listing. */
+/* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    CovidModel.getCovidLaos((err, result) => {
+    Active_caseModel.Active_case((err, result) => {
         if (err) {
             next(err)
         } else {

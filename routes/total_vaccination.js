@@ -1,12 +1,12 @@
 const express = require('express');
-const HotlineModel = require('../models/Hotline_number')
+const Total_vaccinationModel = require('../models/Total_vaccination')
 
 const router = express.Router();
 
-/* GET Emergency Contact listing. */
+/* GET Province's vaccined listing. */
 router.get('/', function(req, res, next) {
 
-    HotlineModel.getEmergencyContact((err, result) => {
+    Total_vaccinationModel.Total_vaccintion((err, result) => {
         if (err) {
             next(err)
         } else {
@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
             })
         }
     })
-  
 });
 
 module.exports = router;

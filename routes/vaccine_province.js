@@ -1,12 +1,12 @@
 const express = require('express');
-const VaccinStatusModel = require('../models/Vaccination_dose_status')
+const Vaccine_provinceModel = require('../models/Vaccine_province')
 
 const router = express.Router();
 
 /* GET Province's vaccined listing. */
 router.get('/', function(req, res, next) {
 
-    VaccinStatusModel.VaccinationStatus((err, result) => {
+    Vaccine_provinceModel.Vaccine_province((err, result) => {
         if (err) {
             next(err)
         } else {

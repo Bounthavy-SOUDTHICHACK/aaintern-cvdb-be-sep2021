@@ -1,13 +1,14 @@
 const connect = require('../db_connect')
 
-const TotalCases = (callback) => {
+const Total_vaccination_dose_1 = (callback) => {
     return connect.query(
-        "SELECT pd_confirmed, pd_active, pd_deceased " +
+        "SELECT SUM(pd_vac_one_dose) as TOTAL_VACCINATION_DOSE1 " +
         "FROM province_data;",
+
         [], 
         callback)
 }
 
 module.exports = {
-    TotalCases
+    Total_vaccination_dose_1
 }
