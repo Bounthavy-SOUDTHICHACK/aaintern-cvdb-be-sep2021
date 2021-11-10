@@ -19,7 +19,8 @@ var recovered_caseRouter = require('./routes/recovered_case');
 var deaths_caseRouter = require('./routes/deaths_case');
 var covid_case_provinceRouter = require('./routes/covid_case_province');
 var vaccine_provinceRouter = require('./routes/vaccine_province');
-
+var case_chartsRouter = require('./routes/case_charts');
+var vaccine_chartsRouter = require('./routes/vaccine_charts');
 
 var app = express();
 
@@ -79,6 +80,12 @@ app.use('/vaccine_province', vaccine_provinceRouter);
 
 //Covid Case Province
 app.use('/covid_case_province', covid_case_provinceRouter);
+
+//Case_charts
+app.use('/case_charts', case_chartsRouter);
+
+//Vaccine_charts
+app.use('/vaccine_charts', vaccine_chartsRouter);
 
 
 module.exports = app;
