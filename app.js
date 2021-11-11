@@ -21,6 +21,7 @@ var covid_case_provinceRouter = require('./routes/covid_case_province');
 var vaccine_provinceRouter = require('./routes/vaccine_province');
 var case_chartsRouter = require('./routes/case_charts');
 var vaccine_chartsRouter = require('./routes/vaccine_charts');
+var time_on_case_chartsRouter = require('./routes/time_on_case_charts');
 
 var app = express();
 
@@ -83,6 +84,9 @@ app.use('/covid_case_province', covid_case_provinceRouter);
 
 //Case_charts
 app.use('/case_charts', case_chartsRouter);
+
+//Time on case charts
+app.use('/time_on_case_charts', time_on_case_chartsRouter);
 
 //Vaccine_charts
 app.use('/vaccine_charts', vaccine_chartsRouter);
