@@ -2,8 +2,9 @@ const connect = require('../db_connect')
 
 const Case_charts = (callback) => {
     return connect.query(
-    
-    "SELECT DATE_FORMAT(pd_date, '%Y/%m/%d') as case_date, " +
+        
+        "SELECT " +
+    // "DATE_FORMAT(pd_date, '%Y/%m/%d') as case_date, " +
         "pd_confirmed as total_case, " +
         "pd_active as active_case, " +
         "pd_recovered as recovered_case, " +

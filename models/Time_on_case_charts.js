@@ -5,7 +5,7 @@ const Time_on_case_charts = (callback) => {
     
     //"SELECT DATE_FORMAT(pd_time,'%H:%i:%s') as time " +
     "SELECT " +
-    "DATE_FORMAT( MAX(pd_time) , '%H:%i:%s') as time " +
+    "SELECT DATE_FORMAT(pd_time, '%Y/%m/%d %H:%i:%s') as case_date, " +
 
     "FROM province_data " +
     "WHERE pd_date BETWEEN DATE_SUB(CURDATE(), INTERVAL 60 DAY) AND CURDATE(); ",
