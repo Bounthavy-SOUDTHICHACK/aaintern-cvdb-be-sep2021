@@ -18,4 +18,28 @@ router.get('/', function(req, res, next) {
     })
 });
 
+/* Insert data listing */
+router.post('/', function(req, res, next) {
+
+    if(
+        req.body.prov_name != "" 
+    ) {
+        ProvinceModel.insertProvince_information(req.body, (err, result) => {
+            if (err) {
+                next(err)
+            } else {
+                return res.json({
+                    status: 200,
+                    message: 'OK'
+                })
+            }
+        })
+    } else {
+        return res.status(400).json({
+            status: 400,
+            message: 'Bad Request'
+        })
+    }
+});
+
 module.exports = router;
